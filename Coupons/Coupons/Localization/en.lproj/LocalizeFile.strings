@@ -1,0 +1,101 @@
+/* 
+  LocalizeFile.strings
+  Converted
+
+  Created by hend elsisi on 4/20/18.
+  Copyright © 2018 hend elsisi. All rights reserved.
+*/
+
+"network msg" = "Please Connect to the internet";
+"Use" = "Use";
+"location msg" = "Please allow location service";
+"notif title"= "Harry Up!";
+"notif msg" = " is waiting you !";
+"error pass" = "Password must be 6-20 characters.";
+"firstTitle" = "Over 200 Deals and Offers";
+"secTitle" = "Discover Nearby Offers";
+"thirdTitle" = "Free Coupons For You";
+"Find Deals" = "Find Deals";
+"Saved" = "Saved";
+"Wish List" = "Wish List";
+"My Account" = "Setting";
+"Logout" = "Logout";
+"LogIn" = "Log In";
+"About" = "About";
+"login msg" = "Please read conditions and restrictions carefully then click redeem ";
+"Welcome Back !" = "Welcome Back !";
+"UseFaceBook" =  "Please share using facebook account";
+
+"cancelLoginMsg" = "User cancelled login.";
+"cancelLoginTitle" = "Login Cancelled";
+"failedLoginMsg" = "Login failed with error";
+"failedLoginTitle" = "Login Fail";
+"fewFriends" = "You must have 10 or more facebook friends!!";
+
+"shareMsg" = "Help your friends to reach the offer to gain more points and win the gift for Free !!";
+"shareTitle" = "Share";
+"shareButton" = "Share";
+"cancelButton" = "Cancel";
+
+"shareHudTitle" = "sharing...";
+
+"cancelPublishMsg" = "User cancelled Publish Permission.";
+"cancelPublisTitle" = "Publish Cancelled";
+"failedPublisMsg" = "Publish Permission failed with error";
+"failedPublisTitle" = "Publish Failed";
+
+"permissionMsg" = "Please Allow Coupon to Post to your Facebook Wall";
+"permissionTitle" = "Allow Permissions";
+"acceptButton" = "Allow";
+
+"removeMsg" = "Remove Voucher from my Wallet";
+"removeTitle" = "Remove Coupon";
+"removeBtn" = "Remove";
+
+"logOutMsg" = "Make log out from your account";
+"logOutTitle" = "Log Out";
+"logOutButton" = "log out";
+
+"shareFailedMsg" = "Failed to share post";
+"shareFailedTitle" = "Share Failed";
+"okButton" = "Ok";
+
+"shareCanceledMsg" = "The share is Canceled";
+"shareCanceledTitle" = "Cancel Share";
+
+"inProccessTitle" = "Horray !!";
+"inProccessMsg" = "Congratulation , you are one step closer to get a discount code for a great promotion . Please stay turned while our team will send you the voucher as soon as possible. ";
+
+
+"aftershareMsg" = "Your order is added to the orders Queue!!";
+"aftershareTitle" = "Congratulation";
+
+"privatePostMsg" = "Coupon App can't find a public facebook post about the purchased offer";
+"privatePostTitle" = "Post Not Found";
+
+"privatePostShare" = "Coupon App can't find a public facebook post about the purchased offer, You might need to change the post privacy Setting.";
+
+"redeemButtonVerify" = "Check Order";
+"redeemOffer" = "Redeem Offer";
+"Use In Stor" = "Use In Stor";
+"checkOrder" = "Verify Order";
+
+"successMsg" = "The discount Code is added to your wallet successfully please press on use in Store when you are at the store location and ready to use it";
+"successTitle" = "Congratulation";
+
+"notifyMsg" = "Verify order and get the discount Code";
+"notifyBtn" = "Go verify";
+
+"hiddenPostMsg" = "Coupon App cant find the shared offer at your facebook wall";
+"hiddenPostTitle" = "Sorry...";
+"failedPostMsg" = "Error Occur while requesting the discount code,please try again";
+"failedPostTitle" = "Ops";
+
+"errorShareTitle" = "Ops";
+"errorShareMsg" = "Error Occur while sharing,please try again";
+
+
+"rpeatRequestMsg" = "Coupon App Server is Busy , Please try again later.";
+"rpeatRequestTitle" = "Sorry";
+
+"Back" = "Back";

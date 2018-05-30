@@ -1,0 +1,64 @@
+PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - ENSwiftSideMenu (0.1.1)
+  - FBSDKCoreKit (4.18.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.18.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.18.0):
+    - FBSDKCoreKit
+  - M13BadgeView (1.0.4)
+  - MaryPopin (1.4.2)
+  - SVProgressHUD (2.1.2)
+  - SwiftyJSON (3.1.3)
+
+DEPENDENCIES:
+  - ENSwiftSideMenu (from `https://github.com/evnaz/ENSwiftSideMenu.git`, tag `0.1.3`)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - M13BadgeView
+  - MaryPopin
+  - SVProgressHUD
+  - SwiftyJSON (~> 3.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
+    - M13BadgeView
+    - MaryPopin
+    - SVProgressHUD
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  ENSwiftSideMenu:
+    :git: https://github.com/evnaz/ENSwiftSideMenu.git
+    :tag: 0.1.3
+
+CHECKOUT OPTIONS:
+  ENSwiftSideMenu:
+    :git: https://github.com/evnaz/ENSwiftSideMenu.git
+    :tag: 0.1.3
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  ENSwiftSideMenu: c6acd4d9507e198044cddb316b06c350ee259a75
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
+  FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
+  M13BadgeView: 700dd0714fdc837c0cf1c8c004454963ec22441f
+  MaryPopin: 24affc7fab9608dcad88279e32e774e5de5d54ac
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+
+PODFILE CHECKSUM: b3248962fda61178989bdf1c9df3f95bf8bf1b30
+
+COCOAPODS: 1.5.2

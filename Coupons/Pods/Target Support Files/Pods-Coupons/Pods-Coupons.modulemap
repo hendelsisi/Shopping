@@ -1,0 +1,6 @@
+framework module Pods_Coupons {
+  umbrella header "Pods-Coupons-umbrella.h"
+
+  export *
+  module * { export * }
+}

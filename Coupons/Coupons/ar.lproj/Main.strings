@@ -1,0 +1,134 @@
+
+/* Class = "UILabel"; text = "No Printer Necessary!"; ObjectID = "4Cg-t4-Ras"; */
+"4Cg-t4-Ras.text" = "No Printer Necessary!";
+
+/* Class = "UILabel"; text = "50% off"; ObjectID = "51b-HX-WAS"; */
+"51b-HX-WAS.text" = "خصم ٪ ٥٠";
+
+/* Class = "UILabel"; text = "May 24 to July 24"; ObjectID = "8n2-5N-Yna"; */
+"8n2-5N-Yna.text" =  "٢٤ مايو الى ٢٤ يوليو";
+
+/* Class = "UILabel"; text = "Free Coupons For You!"; ObjectID = "8pC-JX-WJa"; */
+"8pC-JX-WJa.text" = "Free Coupons For You!";
+
+/* Class = "UIButton"; normalTitle = "GOT IT"; ObjectID = "A8x-dw-ToI"; */
+"A8x-dw-ToI.normalTitle" = "GOT IT";
+
+"tHg-JR-GJ9.title" = "العروض";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AHw-iX-vuD"; */
+"AHw-iX-vuD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "50% off a single item at A.C. Moore (03/31)"; ObjectID = "G0q-l8-JzY"; */
+"G0q-l8-JzY.text" = "50% off a single item at A.C. Moore (03/31)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HC8-GK-YNb"; */
+"HC8-GK-YNb.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Please Enter email"; ObjectID = "Jvq-gC-WVC"; */
+"Jvq-gC-WVC.placeholder" = "البريد الألكتروني";
+
+/* Class = "UITextField"; placeholder = "Please Enter Password"; ObjectID = "K9T-An-ZsI"; */
+"K9T-An-ZsI.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "N4c-RA-EQL"; */
+"N4c-RA-EQL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Any purchase of 50 or more"; ObjectID = "NeV-vb-jRz"; */
+"NeV-vb-jRz.text" = "عند شرائك بمقدار ٥٠ دولار او اكثر";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "Nl2-2z-ILt"; */
+"Nl2-2z-ILt.normalTitle" = "Share";
+
+/* Class = "UILabel"; text = "Pick your favorite stores"; ObjectID = "OBw-zf-Yxk"; */
+"OBw-zf-Yxk.text" = "اختر متجرك المفضل";
+
+/* Class = "UILabel"; text = "Discount Code"; ObjectID = "Xgx-Db-meB"; */
+"Xgx-Db-meB.text" = "كود التخفيض";
+
+/* Class = "UIButton"; normalTitle = "Get Now"; ObjectID = "ZKY-us-GVw"; */
+"ZKY-us-GVw.normalTitle" = "اكتشف العروض";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "aQc-X8-lwD"; */
+"aQc-X8-lwD.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Remember your best purchase in your life. How proud were you? We now has the greatest Sale on Fashion . It is your second best lifetime purchase. Don't delay it any longer."; ObjectID = "e66-qi-5VI"; */
+"e66-qi-5VI.text" = "أتذكر تجربة شراء أفضل ما لديك. و كيف كنت فخور بذلك؟ لدينا الآن أعظم بيع على الموضة. هذا هو ثاني أفضل شراء لك مدى الحياة. هيا سارع الآن.";
+
+/* Class = "UILabel"; text = "Tip: How to redeem"; ObjectID = "fpG-eC-9kc"; */
+"fpG-eC-9kc.text" = "طريقة استخدام الكوبون";
+
+/* Class = "UILabel"; text = "You don't have Vouchers"; ObjectID = "h6V-Kh-7Up"; */
+"h6V-Kh-7Up.text" = "لا يوجد لديك كوبونات";
+
+/* Class = "UILabel"; text = "#share"; ObjectID = "hXx-YA-MuC"; */
+"hXx-YA-MuC.text" = "#share";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "hwg-XS-LCP"; */
+"hwg-XS-LCP.normalTitle" = "تم";
+
+/* Class = "UILabel"; text = "Save the Coupon to your wallet after share and when you are ready to use the coupon tap use In Store button and show the merchant the voucher code."; ObjectID = "hzR-HO-E5S"; */
+"hzR-HO-E5S.text" = "اضغط على طلب العرض و قم بالمشاركة على شبكة التواصل الأجتماعية  وعندما تكون مستعدًاللأستفادة من العرض اضغط على زر طلب الكود ثم أظهر رقم القسيمة لموظف الكاشير ";
+
+/* Class = "UILabel"; text = "Please, enter a valid e-mail!"; ObjectID = "iVe-Ec-e0C"; */
+"iVe-Ec-e0C.text" = "راجع حقل البريد الألكتروني";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "ijR-es-tM2"; */
+"ijR-es-tM2.normalTitle" = "رجوع";
+
+/* Class = "UILabel"; text = "Simply show cashier your device!"; ObjectID = "lHP-uP-oVE"; */
+"lHP-uP-oVE.text" = "Simply show cashier your device!";
+
+/* Class = "UILabel"; text = "Expires"; ObjectID = "mGm-U6-qwM"; */
+"mGm-U6-qwM.text" = "ينتهي";
+
+/* Class = "UILabel"; text = "Rules & Restrictions"; ObjectID = "mLl-X6-C55"; */
+"mLl-X6-C55.text" = "الشروط والأحكام";
+
+/* Class = "UILabel"; text = "• The merchant accept your voucher on a mobile device\n• The deal is valid at all branches in KSA\n• Valid through the Holy Month of Ramadan\n• To avail the offer a screen code voucher required\n• All prices shown are inclusive of VAT where applicable"; ObjectID = "mUV-bC-ZUR"; */
+"mUV-bC-ZUR.text" = "• للأستفادة من العرض يرجى إظهار كود القسيمة لموظف الكاشير\n• يسري العرض بجميع فروع المملكة العربية السعودية\n• يسري العرض أيضا خلال شهر رمضان المبارك\n• للحصول على العرض يشترط احضار نسخة من القسيمة على الجوال\n• تشمل أسعارنا الضريبة على القيمة المضافة عند الأقتضاء";
+
+/* Class = "UIButton"; normalTitle = "+ Follow"; ObjectID = "nQg-bx-EF6"; */
+"nQg-bx-EF6.normalTitle" = "+متابعة";
+
+/* Class = "UIButton"; normalTitle = "Get Now"; ObjectID = "nsa-tA-Yw2"; */
+"nsa-tA-Yw2.normalTitle" = "Get Now";
+
+/* Class = "UIButton"; normalTitle = "Use In Store"; ObjectID = "oDm-Yd-Rx9"; */
+"oDm-Yd-Rx9.normalTitle" = "طلب الكود";
+
+/* Class = "UILabel"; text = "Friday,30 November 2018"; ObjectID = "p9o-gr-ntL"; */
+"p9o-gr-ntL.text" = "الجمعة ,٣٠ نوفمبر ٢٠١٨";
+
+/* Class = "UILabel"; text = "Costa"; ObjectID = "pCv-Qy-ry1"; */
+"pCv-Qy-ry1.text" = "Costa";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "qI2-v7-84L"; */
+"qI2-v7-84L.normalTitle" = "رجوع";
+
+/* Class = "UILabel"; text = "Coupons"; ObjectID = "tz9-1l-1iW"; */
+"tz9-1l-1iW.text" = "العروض";
+
+/* Class = "UILabel"; text = "To continue, please login or create your account"; ObjectID = "uXg-VW-poP"; */
+"uXg-VW-poP.text" = "يتوجب عليك التسجيل للتمكن من الحصول على الجوائز";
+
+/* Class = "UIButton"; normalTitle = "Redeem Offer"; ObjectID = "v4V-GB-hob"; */
+"v4V-GB-hob.normalTitle" = "طلب العرض";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "w1x-mW-wU4"; */
+"w1x-mW-wU4.normalTitle" = "إلغاء";
+
+/* Class = "UIButton"; normalTitle = "skip"; ObjectID = "wsy-mR-Ntd"; */
+"wsy-mR-Ntd.normalTitle" = "تخطي";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "xNI-ZR-BkX"; */
+"xNI-ZR-BkX.normalTitle" = "تم";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "y99-vY-C85"; */
+"y99-vY-C85.normalTitle" = "رجوع";
+
+/* Class = "UIButton"; normalTitle = "Create"; ObjectID = "z2R-gt-FiH"; */
+"z2R-gt-FiH.normalTitle" = "تسجيل";
+
+/* Class = "UILabel"; text = "Let your friends know about the promotion"; ObjectID = "zcS-xJ-kkg"; */
+"zcS-xJ-kkg.text" = "Let your friends know about the promotion";

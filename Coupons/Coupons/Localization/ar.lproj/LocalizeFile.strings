@@ -1,0 +1,104 @@
+/* 
+  LocalizeFile.strings
+  Converted
+
+  Created by hend elsisi on 4/20/18.
+  Copyright © 2018 hend elsisi. All rights reserved.
+*/
+
+
+"Use" = "اشتراك";
+"network msg" = "انت غير متصل بشبكة الأنترنت";
+"Ok" = "شكرا";
+"location msg" = "من فضلك السماح للتطبيق للتعرف على الموقع";
+"notif title"= "هيا الأن";
+"notif msg" = "  يقدم المزيد من الخصومات ";
+
+"Back" = "رجوع";
+"error pass" = "كلمة المرور قصيرة";
+"firstTitle" = "العديد من المفاجأت و التخفيضات";
+"secTitle" = "تعرف على المتاجر والعروض القريبة";
+"thirdTitle" = "اربح معنا كوبونات مجانا";
+
+"Find Deals" = "بحث";
+"Saved" = "سلة";
+"Wish List" = "طلباتي";
+"My Account" = "حسابي";
+"Logout" = "تسجيل خروج";
+"About" = "مساعدة";
+"LogIn" = "تسجيل دخول";
+"login msg" = "من فضلك اقرأ الشروط والأحكام جيدا ثم اضغط على زر طلب العرض";
+"Welcome Back !" = "أهلا بك ";
+"+ Follow" = "+ متابعة";
+"✓ Following" = "✓ متابع";
+
+"cancelLoginMsg" = "إلغاء عملية تسجيل الدخول";
+"cancelLoginTitle" = "إلغاء";
+"failedLoginMsg" = "محاولة تسجيل الدخول لم تنجح";
+"failedLoginTitle" = "فشل تسجيل الدخول";
+"fewFriends" = "ليس لديك عدد أصدقاء كافي لنشر العرض";
+
+"shareMsg" = "قم بمشاركة العرض على الفيسبوك للتمكن من الحصول عليه مجانا";
+"shareTitle" = "شارك العرض";
+"shareButton" = "مشاركة";
+"cancelButton" = "إلغاء";
+
+
+"shareHudTitle" = "مشاركة";
+
+"cancelPublishMsg" = "إلغاء مشاركة العرض";
+"cancelPublisTitle" = "إلغاء المشاركة";
+"failedPublisMsg" = "فشل المشاركة عن طريق الفيسبوك";
+"failedPublisTitle" = "إلغاء المشاركة";
+
+"permissionMsg" = "من فضلك السماح لكوبون ان يكتب على الحائط الخاص بك";
+"permissionTitle" = "طلب اذن";
+"acceptButton" = "سماح";
+
+"logOutMsg" = "تسجيل خروج من حساب الشخصي";
+"logOutTitle" = "تسجيل خروج";
+"logOutButton" = "خروج";
+
+"shareFailedMsg" = "فشل مشاركة الاعلان على الحائط";
+"shareFailedTitle" = "فشل المشاركة";
+"okButton" = "شكرا";
+
+"shareCanceledMsg" = "لقد تم إلغاء المشاركة";
+"shareCanceledTitle" = "إلغاء المشاركة";
+
+"inProccessTitle" = "لم يصل بعد";
+"inProccessMsg" = " سوف يتم إضافة القسيمة إلى محفطتك بعد لحظات";
+
+"aftershareMsg" = "انتظر قليلا ثم راقب محفظتك , سوف نقوم بإشعارك بالكود المطلوب ";
+"aftershareTitle" = "مبروك";
+
+"privatePostMsg" = "كوبون لا يجد منشور عام بالرابط على الحائط الخاص بك";
+"privatePostTitle" = "لم نجد المنشور";
+
+"rpeatRequestMsg" = "الخادم لا يستقبل طلبات الأن من فضلك حاول في وقت لاحق";
+"rpeatRequestTitle" = "عفوا";
+
+"privatePostShare" = "كوبون لا يجد منشور عام بالرابط على الحائط الخاص بك من فضلك عدل الخصوصية الى عام";
+
+"redeemOffer" = "طلب العرض";
+"checkOrder" = "تحقق من الطلب";
+"redeemButtonVerify" = "تابع الطلب";
+
+"successMsg" = "لقد حصلت للتو على قسيمة التخفيض من فضلك اضغط على زر طلب الكود عندما تكون مستعد لاستخدام القسيمة";
+"successTitle" = "مبروك";
+"hiddenPostMsg" = "كوبون لا يجد منشور التخفيض على الحائط الخاص بك";
+"hiddenPostTitle" = "معذرة";
+"failedPostMsg" = "حدث خطأ أثناء طلب الكود من فضلك حاول مرة أخرى";
+"failedPostTitle" = "خطأ أثناء الطلب";
+
+"errorShareTitle" = "خطأ";
+"errorShareMsg" = "حدث خطأ أثناء المشاركة من فضلك حاول مرة أخرى";
+
+"Use In Stor" = "طلب الكود";
+
+"notifyMsg" = "تستطيع ان تحصل على كود التخفيض بعد أن تتأكد من توفره لديك";
+"notifyBtn" = "تأكيد الطلب";
+
+"removeMsg" = "هل تريد حذف الكوبون من محفظتك ؟!؟";
+"removeTitle" = "حذف الكوبون";
+"removeBtn" = "حذف";

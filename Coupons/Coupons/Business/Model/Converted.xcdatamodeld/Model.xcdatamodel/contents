@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14124.1" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MyWallet" representedClassName="MyWallet" syncable="YES">
+        <attribute name="facebook_post" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="post_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="coupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="purchased" inverseEntity="Offer" syncable="YES"/>
+    </entity>
+    <entity name="Offer" representedClassName="Offer" syncable="YES">
+        <attribute name="coup_brand_img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_expDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_img_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_link_Url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coup_store" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="purchased" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyWallet" inverseName="coupon" inverseEntity="MyWallet" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MyWallet" positionX="36" positionY="126" width="128" height="105"/>
+        <element name="Offer" positionX="36" positionY="81" width="128" height="165"/>
+    </elements>
+</model>
