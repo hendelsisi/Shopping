@@ -15,13 +15,13 @@ import UIKit
     static let instance = DataBaseManager()
     var deletedOrder:MyWallet?
     
-    
     lazy var managedContext:NSManagedObjectContext = {
          let appDelegate = UIApplication.shared.delegate as? AppDelegate
         var managedContext = appDelegate?.persistentContainer.viewContext
         return managedContext!
     }()
   
+    //Mark: - get all offers subscribed by user at home screen
     func loadOffers(fetchedResultsController:NSFetchedResultsController<Offer>){
         //persistant container
         let persistentContainer = NSPersistentContainer(name: Constants.CoreData.modelName)
@@ -39,15 +39,7 @@ import UIKit
         }
     }
     
-    func isPrivatePostPurchasedCoupon(id:String) -> Bool {
-        let fetchRequest: NSFetchRequest<MyWallet> = MyWallet.fetchRequest()
-        fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "facebook_post = %@", id)
-        let item = try! managedContext.fetch(fetchRequest)
-        let sharedItem = item.first
-        return sharedItem?.post_status == "private"
-    }
-    
+    //Mark: - get all the users coupons at wallet screen
     func loadData(fetchedResultsController:NSFetchedResultsController<MyWallet>,foundResult: @escaping (Bool) -> Void){
         //persistant container
         let persistentContainer = NSPersistentContainer(name: Constants.CoreData.modelName)
@@ -68,6 +60,7 @@ import UIKit
         }
     }
     
+    //Mark: - Initialize Core Data
     func retriveAndInitCoreData() {
         do {
             let carFetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.CoreData.offerEntityName)
@@ -81,17 +74,7 @@ import UIKit
         }
     }
     
-   private func storRequest() -> Bool {
-        do {
-            print("saved")
-            try managedContext.save()
-            return true
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-            return false
-        }
-    }
-    
+    //Mark: - mark coupon as active
     func editCouponToRecivedCodeState(id:String,dbedit:(Bool)->Void)  {
         let fetchRequest: NSFetchRequest<MyWallet> = MyWallet.fetchRequest()
         fetchRequest.fetchLimit = 1
@@ -99,14 +82,15 @@ import UIKit
         let item = try! managedContext.fetch(fetchRequest)
         let sharedItem = item.first
         sharedItem?.post_status = "valid"
-        do {
-            try managedContext.save()
-            dbedit(true)
-        }
-        catch {
-            dbedit(false)
-            print("Saving Core Data Failed: \(error)")
-        }
+//        do {
+//            try managedContext.save()
+//            dbedit(true)
+//        }
+//        catch {
+//            dbedit(false)
+//            print("Saving Core Data Failed: \(error)")
+//        }
+         dbedit(self.storeRequest())
     }
     
     func editCouponToPrivateShare(id:String)  {
@@ -116,14 +100,15 @@ import UIKit
         let item = try! managedContext.fetch(fetchRequest)
         let sharedItem = item.first
         sharedItem?.post_status = "private"
-        do {
-            try managedContext.save()
-        }
-        catch {
-            print("Saving Core Data Failed: \(error)")
-        }
+//        do {
+//            try managedContext.save()
+//        }
+//        catch {
+//            print("Saving Core Data Failed: \(error)")
+//        }
+        _ = self.storeRequest()
     }
-    //delete the coupons from user which is not published on the social network
+    // Mark: - delete the coupons from user which is not published on the social network
     func deleteCouponfromCart(id:String,dbDelete:(Bool)->Void)  {
         //
         let fetchRequest: NSFetchRequest<MyWallet> = MyWallet.fetchRequest()
@@ -134,34 +119,20 @@ import UIKit
         for object in item {
             managedContext.delete(object)
         }
-        do {
-            try managedContext.save()
-           dbDelete(true)
-        }
-        catch {
-            print("Saving Core Data Failed: \(error)")
-             dbDelete(false)
-            
-        }
+             dbDelete(self.storeRequest())
     }
     
+    //Mark: - add the coupon to the user wallet to be used later
     func addValidShareState(coup:Offer?,postId:String,dbstore:(Bool)->Void)  {
                          print("the post id is \(postId)")
                         let offerEntity = NSEntityDescription.entity(forEntityName:Constants.CoreData.walletEntityName, in: managedContext)!
                         let cart = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                 let myCrat:[String:AnyHashable] = ["coup_id":coup!.coup_id!,"coupon":coup!,"facebook_post":postId,"post_status":"inProcess","postDate":Date()]
                 cart.setValue(myCrat, forKey: "cart")
-        
-        if self.storRequest(){
-            
-            dbstore(true)
-           
-        }else{
-             dbstore(false)
-        }
+            dbstore(self.storeRequest())
     }
 
-
+    //Mark: - final recheck before activate the coupon request to handle user post hidden from social media and not allowing user's friends from knowing about the promotion
     func  modifyCoupStateAfterNotification(id:String,dbedit:(Bool)->Void){
     let fetchRequest: NSFetchRequest<MyWallet> = MyWallet.fetchRequest()
     fetchRequest.fetchLimit = 1
@@ -170,19 +141,20 @@ import UIKit
     let sharedItem = item.first
        
     sharedItem?.post_status = "check"
-    do {
-        try managedContext.save()
-        print("success")
-        dbedit(true)
-    }
-    catch {
-        dbedit(false)
-        print("Saving Core Data Failed: \(error)")
-    }
+//    do {
+//        try managedContext.save()
+//        print("success")
+//        dbedit(true)
+//    }
+//    catch {
+//        dbedit(false)
+//        print("Saving Core Data Failed: \(error)")
+//    }
+             dbedit(self.storeRequest())
     }
     
+    //Mark: - assume data getting from the server side
     func storeDummyData() {
-        
         let offerEntity = NSEntityDescription.entity(forEntityName:  Constants.CoreData.offerEntityName, in: managedContext)!
         let first = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                 first.setValue("http://www2.hm.com/en_gb/productpage.0566370001.html", forKey: "coup_link_Url")
@@ -192,11 +164,13 @@ import UIKit
                 first.setValue("e234244", forKey: "coup_id")
        
                 first.setValue("Coupons_screen_H&M", forKey: "coup_brand_img")
-        first.setValue("shareOffer_H&M", forKey: "coup_img_name")
+                first.setValue("shareOffer_H&M", forKey: "coup_img_name")
         
                 first.setValue("50% off at H&M,or online via promo code FRINDS (03/31)", forKey: "coup_desc")
         
                 first.setValue("H&M", forKey: "coup_store")
+
+        first.setValue(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), forKey: "btnTitle")
         
         let sec = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                         sec.setValue("https://www.thebodyshop.com/en-us/", forKey: "coup_link_Url")
@@ -211,8 +185,8 @@ import UIKit
                 sec.setValue("$5 off $25 at The Body Shop or online via promo code SDOSAVE525 (03/31)", forKey: "coup_desc")
         
                 sec.setValue("The Body Shop", forKey: "coup_store")
+        sec.setValue(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), forKey: "btnTitle")
        
-
         let third = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                 third.setValue("https://www.costa.co.uk/terms/", forKey: "coup_link_Url")
         
@@ -226,7 +200,7 @@ import UIKit
                 third.setValue( "50% off a single meal at Costa (03/31)", forKey: "coup_desc")
         
                 third.setValue("Costa", forKey: "coup_store")
-       
+          third.setValue(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), forKey: "btnTitle")
 
          let fourth = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                 fourth.setValue("https://online.kfc.co.in/deals/listing", forKey: "coup_link_Url")
@@ -241,7 +215,7 @@ import UIKit
                 fourth.setValue("Second lunch free today at KFC (03/31)", forKey: "coup_desc")
         
                 fourth.setValue( "KFC", forKey: "coup_store")
-      
+         fourth.setValue(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), forKey: "btnTitle")
 
          let fifth = NSManagedObject(entity: offerEntity, insertInto: managedContext)
                 fifth.setValue("https://www.splashfashions.com/sa/en/?gclid=EAIaIQobChMIuebwlois2gIVa7HtCh2mtgWNEAAYASAAEgK3qPD_BwE", forKey: "coup_link_Url")
@@ -256,12 +230,24 @@ import UIKit
                 fifth.setValue("Enjoy Clothes and gifts for your friends and family with lower price during this month", forKey: "coup_desc")
 
                 fifth.setValue("Splash", forKey: "coup_store")
+         fifth.setValue(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), forKey: "btnTitle")
         
+//        do {
+//            try managedContext.save()
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//        }
+        _ = storeRequest()
+    }
+    
+    private func storeRequest() -> Bool {
         do {
+            print("saved")
             try managedContext.save()
+            return true
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+            return false
         }
     }
-
 }

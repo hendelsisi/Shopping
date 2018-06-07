@@ -199,6 +199,7 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
 
             let transfer = segue.destination as? CouponDetailViewController
             transfer?.selectedCoup = coupItem
+            transfer?.redeemButton.relatedCoupon = coupItem
         }
     }
 

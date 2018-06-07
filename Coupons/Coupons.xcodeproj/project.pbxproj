@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F035349BCAA8D3DAA6029E6 /* Pods_Coupons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDC7C86D6909F54555D8E15 /* Pods_Coupons.framework */; };
-		B306788E20A4A721007A0B85 /* CouponState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306788D20A4A721007A0B85 /* CouponState.swift */; };
+		B304121D20BF42B200232D4F /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B304121C20BF42B200232D4F /* NotificationHandler.swift */; };
+		B306788E20A4A721007A0B85 /* CouponInterfaceOperationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306788D20A4A721007A0B85 /* CouponInterfaceOperationHandler.swift */; };
 		B309A0EC2088AD10000816BB /* Offer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309A0EA2088AD0F000816BB /* Offer+CoreDataClass.swift */; };
 		B309A0ED2088AD10000816BB /* Offer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309A0EB2088AD0F000816BB /* Offer+CoreDataProperties.swift */; };
 		B309A1192088B3C6000816BB /* Converted.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B309A1172088B3C6000816BB /* Converted.xcdatamodeld */; };
@@ -127,8 +128,17 @@
 		B39F090B20877D4F006ACD94 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F090A20877D4F006ACD94 /* HeaderView.swift */; };
 		B39F090D20877DE1006ACD94 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F090C20877DE1006ACD94 /* ContainerViewController.swift */; };
 		B39F090F20877F1D006ACD94 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F090E20877F1D006ACD94 /* PageViewController.swift */; };
-		B3A0FE5F209F82E000AEC9F6 /* FBRequstHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A0FE5E209F82E000AEC9F6 /* FBRequstHandler.swift */; };
+		B3A0FE5F209F82E000AEC9F6 /* FBRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A0FE5E209F82E000AEC9F6 /* FBRequestHandler.swift */; };
 		B3D7244520B22325002CD837 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7244220B22325002CD837 /* MyNavigationController.swift */; };
+		B3DB2C3720BFA18F00269119 /* FBRequstHandler+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C3620BFA18F00269119 /* FBRequstHandler+Alert.swift */; };
+		B3DB2C3920BFA5F100269119 /* FBRequstHandler+UserFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C3820BFA5F100269119 /* FBRequstHandler+UserFriends.swift */; };
+		B3DB2C3C20BFABB900269119 /* FBRequstHandler+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C3B20BFABB900269119 /* FBRequstHandler+Requests.swift */; };
+		B3DB2C3E20BFB1CA00269119 /* FBUserFriendsRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C3D20BFB1CA00269119 /* FBUserFriendsRequestHandler.swift */; };
+		B3DB2C4020BFB28300269119 /* FBUserLoginRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C3F20BFB28300269119 /* FBUserLoginRequestHandler.swift */; };
+		B3DB2C4220BFB37E00269119 /* FBShareDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C4120BFB37E00269119 /* FBShareDialog.swift */; };
+		B3DB2C4420BFB47400269119 /* FBGetPostAudienceRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C4320BFB47400269119 /* FBGetPostAudienceRequestHandler.swift */; };
+		B3DB2C4620BFB4FC00269119 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C4520BFB4FC00269119 /* Protocol.swift */; };
+		B3DB2C4820BFBA0F00269119 /* CouponFBOperationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB2C4720BFBA0F00269119 /* CouponFBOperationInterface.swift */; };
 		B3E5FD65209F1A2F001DB384 /* LoginButton.Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FD5D209F1A2F001DB384 /* LoginButton.Tooltip.swift */; };
 		B3E5FD66209F1A2F001DB384 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FD5E209F1A2F001DB384 /* LoginResult.swift */; };
 		B3E5FD67209F1A2F001DB384 /* LoginButtonDelegateBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FD5F209F1A2F001DB384 /* LoginButtonDelegateBridge.swift */; };
@@ -146,7 +156,8 @@
 /* Begin PBXFileReference section */
 		5713BA4270E97B13AE086113 /* Pods-Coupons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coupons.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coupons/Pods-Coupons.release.xcconfig"; sourceTree = "<group>"; };
 		9CDC7C86D6909F54555D8E15 /* Pods_Coupons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coupons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B306788D20A4A721007A0B85 /* CouponState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponState.swift; sourceTree = "<group>"; };
+		B304121C20BF42B200232D4F /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		B306788D20A4A721007A0B85 /* CouponInterfaceOperationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponInterfaceOperationHandler.swift; sourceTree = "<group>"; };
 		B309A0EA2088AD0F000816BB /* Offer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Offer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B309A0EB2088AD0F000816BB /* Offer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Offer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B309A1182088B3C6000816BB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -270,8 +281,17 @@
 		B39F090C20877DE1006ACD94 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		B39F090E20877F1D006ACD94 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B39F091020878CD5006ACD94 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		B3A0FE5E209F82E000AEC9F6 /* FBRequstHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRequstHandler.swift; sourceTree = "<group>"; };
+		B3A0FE5E209F82E000AEC9F6 /* FBRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRequestHandler.swift; sourceTree = "<group>"; };
 		B3D7244220B22325002CD837 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		B3DB2C3620BFA18F00269119 /* FBRequstHandler+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FBRequstHandler+Alert.swift"; sourceTree = "<group>"; };
+		B3DB2C3820BFA5F100269119 /* FBRequstHandler+UserFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FBRequstHandler+UserFriends.swift"; sourceTree = "<group>"; };
+		B3DB2C3B20BFABB900269119 /* FBRequstHandler+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FBRequstHandler+Requests.swift"; sourceTree = "<group>"; };
+		B3DB2C3D20BFB1CA00269119 /* FBUserFriendsRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserFriendsRequestHandler.swift; sourceTree = "<group>"; };
+		B3DB2C3F20BFB28300269119 /* FBUserLoginRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUserLoginRequestHandler.swift; sourceTree = "<group>"; };
+		B3DB2C4120BFB37E00269119 /* FBShareDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBShareDialog.swift; sourceTree = "<group>"; };
+		B3DB2C4320BFB47400269119 /* FBGetPostAudienceRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGetPostAudienceRequestHandler.swift; sourceTree = "<group>"; };
+		B3DB2C4520BFB4FC00269119 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		B3DB2C4720BFBA0F00269119 /* CouponFBOperationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponFBOperationInterface.swift; sourceTree = "<group>"; };
 		B3E5FD5D209F1A2F001DB384 /* LoginButton.Tooltip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.Tooltip.swift; sourceTree = "<group>"; };
 		B3E5FD5E209F1A2F001DB384 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		B3E5FD5F209F1A2F001DB384 /* LoginButtonDelegateBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonDelegateBridge.swift; sourceTree = "<group>"; };
@@ -614,11 +634,11 @@
 		B31F32EB208603E10040B2B1 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				B3DB2C3A20BFA5FE00269119 /* FBRequests */,
 				B31F32F3208603E10040B2B1 /* DataBaseManager.swift */,
 				B31F32ED208603E10040B2B1 /* NotificationManager.swift */,
-				B3A0FE5E209F82E000AEC9F6 /* FBRequstHandler.swift */,
 				B31F32EE208603E10040B2B1 /* ShareManager.swift */,
-				B306788D20A4A721007A0B85 /* CouponState.swift */,
+				B306788D20A4A721007A0B85 /* CouponInterfaceOperationHandler.swift */,
 				B31F32F1208603E10040B2B1 /* LocationManager.swift */,
 				B392691A20B44EA400D7413D /* Custom Segue */,
 				B31F33242086052A0040B2B1 /* Model */,
@@ -708,6 +728,31 @@
 			path = LeftMenu;
 			sourceTree = "<group>";
 		};
+		B3DB2C3A20BFA5FE00269119 /* FBRequests */ = {
+			isa = PBXGroup;
+			children = (
+				B3DB2C4920BFC1F500269119 /* New Group */,
+				B3DB2C4520BFB4FC00269119 /* Protocol.swift */,
+				B3A0FE5E209F82E000AEC9F6 /* FBRequestHandler.swift */,
+				B3DB2C4720BFBA0F00269119 /* CouponFBOperationInterface.swift */,
+				B3DB2C3F20BFB28300269119 /* FBUserLoginRequestHandler.swift */,
+				B3DB2C3D20BFB1CA00269119 /* FBUserFriendsRequestHandler.swift */,
+				B3DB2C4320BFB47400269119 /* FBGetPostAudienceRequestHandler.swift */,
+				B3DB2C4120BFB37E00269119 /* FBShareDialog.swift */,
+			);
+			path = FBRequests;
+			sourceTree = "<group>";
+		};
+		B3DB2C4920BFC1F500269119 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B3DB2C3620BFA18F00269119 /* FBRequstHandler+Alert.swift */,
+				B3DB2C3820BFA5F100269119 /* FBRequstHandler+UserFriends.swift */,
+				B3DB2C3B20BFABB900269119 /* FBRequstHandler+Requests.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B3E5FD5C209F1A2F001DB384 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +782,7 @@
 				B3FC1BE420A9E77E00D94E14 /* ColorExtension.swift */,
 				B39618E520AB014500D11217 /* StringExtension.swift */,
 				B310845420BBB51600830427 /* topMostViewController.swift */,
+				B304121C20BF42B200232D4F /* NotificationHandler.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -884,7 +930,7 @@
 				B310AAE2209DC99D008541B0 /* AppEventName.swift in Sources */,
 				B310AB11209DC99D008541B0 /* AppInvite.PromoCode.swift in Sources */,
 				B310AAFF209DC99D008541B0 /* ContentProtocol.swift in Sources */,
-				B3A0FE5F209F82E000AEC9F6 /* FBRequstHandler.swift in Sources */,
+				B3A0FE5F209F82E000AEC9F6 /* FBRequestHandler.swift in Sources */,
 				B310AB1D209DC99D008541B0 /* ShareError.swift in Sources */,
 				B3E5FD68209F1A2F001DB384 /* LoginDefaultAudience.swift in Sources */,
 				B310AB17209DC99D008541B0 /* GameRequest.RecipientsFilter.swift in Sources */,
@@ -895,6 +941,7 @@
 				B310845520BBB51600830427 /* topMostViewController.swift in Sources */,
 				B31F3314208604300040B2B1 /* StoresViewController.swift in Sources */,
 				B310AB0A209DC99D008541B0 /* ContentSharingProtocol.swift in Sources */,
+				B3DB2C3720BFA18F00269119 /* FBRequstHandler+Alert.swift in Sources */,
 				B310AADE209DC99D008541B0 /* Optional+OnSome.swift in Sources */,
 				B310AB1F209DC99D008541B0 /* SendButton.swift in Sources */,
 				B310AB01209DC99D008541B0 /* OpenGraphPropertyName.swift in Sources */,
@@ -920,6 +967,7 @@
 				B31F3310208604300040B2B1 /* HomeViewController.swift in Sources */,
 				B3572BBD20B60B2800BC7822 /* ItemAnimation.swift in Sources */,
 				B310AAFE209DC99D008541B0 /* PostSharingResult.swift in Sources */,
+				B3DB2C4820BFBA0F00269119 /* CouponFBOperationInterface.swift in Sources */,
 				B310AAE8209DC99D008541B0 /* ReadPermission.swift in Sources */,
 				B310AAD6209DC99D008541B0 /* GraphAPIVersion.swift in Sources */,
 				B310AAEE209DC99D008541B0 /* UserProfile.PictureView.swift in Sources */,
@@ -956,12 +1004,15 @@
 				B310AAFB209DC99D008541B0 /* VideoShareContent.swift in Sources */,
 				B31F32F7208603E10040B2B1 /* RoundedImage.swift in Sources */,
 				B31F32F5208603E10040B2B1 /* NotificationManager.swift in Sources */,
+				B304121D20BF42B200232D4F /* NotificationHandler.swift in Sources */,
 				B31F330A208604300040B2B1 /* SignUpViewController.swift in Sources */,
 				B3E5FD6C209F1A2F001DB384 /* LoginButtonDelegate.swift in Sources */,
+				B3DB2C4220BFB37E00269119 /* FBShareDialog.swift in Sources */,
 				B310AAEA209DC99D008541B0 /* SDKLoggingBehavior.swift in Sources */,
 				B310AB16209DC99D008541B0 /* GameRequest.Recipient.swift in Sources */,
 				B31F32F6208603E10040B2B1 /* ShareManager.swift in Sources */,
 				B310AAF9209DC99D008541B0 /* Constants.Internal.swift in Sources */,
+				B3DB2C4620BFB4FC00269119 /* Protocol.swift in Sources */,
 				B310AB15209DC99D008541B0 /* GameRequest.ActionType.swift in Sources */,
 				B310AAE6209DC99D008541B0 /* Permission.swift in Sources */,
 				B310AB23209DC99D008541B0 /* LikeControl.AuxilaryStyle.swift in Sources */,
@@ -971,6 +1022,7 @@
 				B310AB1E209DC99D008541B0 /* LikableObject.swift in Sources */,
 				B310AAE3209DC99D008541B0 /* AppEvent.swift in Sources */,
 				B31F331F208604D40040B2B1 /* IconCollectionViewCell.swift in Sources */,
+				B3DB2C4020BFB28300269119 /* FBUserLoginRequestHandler.swift in Sources */,
 				B310AAFC209DC99D008541B0 /* Video.swift in Sources */,
 				B310AB1C209DC99D008541B0 /* MessageDialog.swift in Sources */,
 				B3EC68E02089D95000284255 /* MyWallet+CoreDataClass.swift in Sources */,
@@ -981,16 +1033,19 @@
 				B313B7F920AA5714004608C2 /* CartGround.swift in Sources */,
 				B31F3331208605740040B2B1 /* Constants.swift in Sources */,
 				B31F333B20860B810040B2B1 /* UserDefaultsManager.swift in Sources */,
-				B306788E20A4A721007A0B85 /* CouponState.swift in Sources */,
+				B306788E20A4A721007A0B85 /* CouponInterfaceOperationHandler.swift in Sources */,
 				B310AAEB209DC99D008541B0 /* SDKApplicationDelegate.swift in Sources */,
 				B310AB1B209DC99D008541B0 /* ContentSharingDialogProtocol.swift in Sources */,
 				B310AB09209DC99D008541B0 /* Photo.swift in Sources */,
 				B310AAD4209DC99D008541B0 /* GraphRequestConnection.swift in Sources */,
+				B3DB2C3C20BFABB900269119 /* FBRequstHandler+Requests.swift in Sources */,
+				B3DB2C3920BFA5F100269119 /* FBRequstHandler+UserFriends.swift in Sources */,
 				B310AB02209DC99D008541B0 /* OpenGraphShareContent.swift in Sources */,
 				B31F32D7208603680040B2B1 /* AppDelegate.swift in Sources */,
 				B3224F92208B54AA0074F88F /* Utility.swift in Sources */,
 				B310AAEF209DC99D008541B0 /* UserProfile.FetchResult.swift in Sources */,
 				B310AAEC209DC99D008541B0 /* SDKSettings.swift in Sources */,
+				B3DB2C3E20BFB1CA00269119 /* FBUserFriendsRequestHandler.swift in Sources */,
 				B3572BBF20B6145300BC7822 /* CustomBarItem.swift in Sources */,
 				B310AB22209DC99D008541B0 /* ShareButton.swift in Sources */,
 				B31F330E208604300040B2B1 /* WalletViewController.swift in Sources */,
@@ -1004,6 +1059,7 @@
 				B31F32F9208603E10040B2B1 /* LocationManager.swift in Sources */,
 				B3E5FD67209F1A2F001DB384 /* LoginButtonDelegateBridge.swift in Sources */,
 				B38AC87720B24EA8005BA9AA /* MenuTableViewControl.swift in Sources */,
+				B3DB2C4420BFB47400269119 /* FBGetPostAudienceRequestHandler.swift in Sources */,
 				B310AAE4209DC99D008541B0 /* AppEvent.Builtin.swift in Sources */,
 				B31F3320208604D40040B2B1 /* CouponDataCell.swift in Sources */,
 				B31F32FB208603E10040B2B1 /* DataBaseManager.swift in Sources */,
@@ -1168,7 +1224,10 @@
 				DEVELOPMENT_TEAM = Y6LFDTFCQ6;
 				INFOPLIST_FILE = Coupons/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.app.Arabian-Center";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1185,7 +1244,10 @@
 				DEVELOPMENT_TEAM = Y6LFDTFCQ6;
 				INFOPLIST_FILE = Coupons/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.app.Arabian-Center";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -37,7 +37,7 @@ extension MyWallet {
           //  self.coup_id = dic?["coup_id"] as? String
         
             self.postDate = dic?["postDate"] as? Date
-            
+            //need clean
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             let managedContext = appDelegate.persistentContainer.viewContext
             
