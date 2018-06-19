@@ -20,20 +20,13 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     var receicedForground:Bool = false
     var center: UNUserNotificationCenter?
     weak var delegate: NotificationManagerDelegate?
-    
-    override init() {
-        super.init()
-        center = UNUserNotificationCenter.current()
-        center?.delegate = self
-    }
 
-    //Mark: - add local notification
     func addNotif( withTitle title: String?,checkId:String) {
         center?.getNotificationSettings(completionHandler: {(_ settings: UNNotificationSettings) -> Void in
             if settings.authorizationStatus == .authorized {
                 let content: UNMutableNotificationContent? = self.getContent(title)
-               // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+               // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
                 var request: UNNotificationRequest? = nil
                 if let aContent = content {
                     request = UNNotificationRequest(identifier: checkId, content: aContent, trigger: trigger)
@@ -42,8 +35,11 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
             }
         })
     }
+
+    func displayAlertNotification()  {
+        UIUtils.instance.showAlertWithMsg("msg", title: "test")
+    }
     
-    //Mark: - get user permission for recieving notification
     func requestNotificationAuthorization() {
             let options: UNAuthorizationOptions = .alert
       center?.requestAuthorization(options: options, completionHandler: {(_ granted: Bool, _ error: Error?) -> Void in
@@ -52,8 +48,33 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                 }
             })
     }
+
+    override init() {
+        super.init()
+        center = UNUserNotificationCenter.current()
+        center?.delegate = self
+    }
+
+// MARK: - add fire notification after user share coupon for code redeem
+
+    func getContent(_ title: String?) -> UNMutableNotificationContent? {
+        let content = UNMutableNotificationContent()
+       content.title = NSLocalizedString("notif title", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: "")
+        content.body = title! + (NSLocalizedString("notif msg", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""))
+       
+        return content
+    }
+
+    func registerNotif(_ request: UNNotificationRequest?) {
+        if let aRequest = request {
+            center?.add(aRequest, withCompletionHandler: {(_ error: Error?) -> Void in
+                if error != nil {
+                    print("not added \(error?.localizedDescription ?? "")")
+                }
+            })
+        }
+    }
     
-    //Mark: - remove pending and delivered notification for canceled purchase request
     func removeLocalNotification(id:String){
         center?.removeDeliveredNotifications(withIdentifiers: [id])
         center?.removePendingNotificationRequests(withIdentifiers: [id])
@@ -64,10 +85,8 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         let presentationOptions: UNNotificationPresentationOptions = [.alert]
         
         self.receicedForground = true
-        self.handleNotificationRecieved(id: notification.request.identifier)
-
-//        CartGround.instance.incrementDigit()
-//       CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: notification.request.identifier)
+        CartGround.instance.incrementDigit()
+       CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: notification.request.identifier)
         
         completionHandler(presentationOptions)
         print("id :- \(notification.request.identifier)")
@@ -76,21 +95,24 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // increment badge icon
         if !self.receicedForground{
-            self.handleNotificationRecieved(id: response.notification.request.identifier)
-//            CartGround.instance.incrementDigit()
-//             CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: response.notification.request.identifier)
+            CartGround.instance.incrementDigit()
+             CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: response.notification.request.identifier)
         }
         let userOpenRecivedNot: Bool = userTap(toViewNotification: response)
     
         if userOpenRecivedNot {
-//            UIUtils.instance.showAlertwith(type: "notify", accept: { (accept) in
-//                if accept{
-//                    self.delegate?.willNavigateToWallet()
-//                }
-//            })
-            self.handleNotificationAlert()
+            UIUtils.instance.showAlertwith(type: "notify", accept: { (accept) in
+                if accept{
+                 
+                    self.delegate?.willNavigateToWallet()
+                }
+            })
         }
     }
-    
+
+// MARK: user did revieve notification and click to view
+   private func userTap(toViewNotification response: UNNotificationResponse?) -> Bool {
+        return response?.actionIdentifier == UNNotificationDefaultActionIdentifier
+    }
 }
 

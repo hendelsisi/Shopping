@@ -24,7 +24,6 @@ extension Offer {
     @NSManaged public var coup_brand_img: String?
     @NSManaged public var coup_link_Url: String?
     @NSManaged public var coup_store: String?
-    @NSManaged public var btnTitle: String?
     @NSManaged public var purchased: MyWallet?
 
     override public func setValue(_ value: Any?, forKey key: String) {
@@ -51,9 +50,6 @@ extension Offer {
         else if key == "coup_store"
         {
             self.coup_store = value as? String
-        }
-        else if  key == "btnTitle"{
-            self.btnTitle = value as? String
         }
         else if key == "purchased"
         {

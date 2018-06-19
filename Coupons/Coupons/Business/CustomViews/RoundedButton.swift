@@ -30,7 +30,7 @@ protocol RoundedButtonDelegate {
     }
     
     func needUpdateView(coup:Offer?){
-       // self.updateView(coup: coup)
+        self.updateView(coup: coup)
     }
     
     func updateView(coupId:String){
@@ -38,22 +38,18 @@ protocol RoundedButtonDelegate {
     }
     
     var delegate:RoundedButtonDelegate?
-    var instance:CouponInterfaceOperationHandler?
-    var relatedCoupon:Offer?
     
        required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.cornerRadius = 10.0
-        self.setTitle(NSLocalizedString((relatedCoupon?.btnTitle)!, tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
     }
     
     func requestOffer(cont:WalletViewController,coup:Offer?){
-       // self.relatedCoupon = coup
          self.validateCoupon(coup: coup,cont:cont)
     }
     
     func requestOffer(cont:CouponDetailViewController,coup:Offer?){
-        // self.relatedCoupon = coup
+        
         if self.isRegistered(){
             self.checkCoupAndShare(cont: cont,coup: coup)
         }else{
@@ -62,13 +58,12 @@ protocol RoundedButtonDelegate {
     }
     
      func checkCoupAndShare(cont:CouponDetailViewController,coup:Offer?){
-        
-        if CouponInterfaceOperationHandler.isPurchasedCoup(selectedCoup:coup){
+        if CouponState.sharedInstance.isPurchasedCoup(selectedCoup:coup){
             self.validateCoupon(coup: coup,cont:cont)
         }
         else{
             self.resetSessionToken()
-            self.goToShare(selectedCoup: coup)
+            self.goToShare(selectedCoup: coup, cont: cont)
         }
     }
     
@@ -83,41 +78,34 @@ protocol RoundedButtonDelegate {
         UIUtils.instance.showAlertWithMsg(NSLocalizedString("login msg", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), title: NSLocalizedString("Welcome Back !", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""))
     }
     
-   func goToShare(selectedCoup:Offer?) {
+   func goToShare(selectedCoup:Offer?,cont:UIViewController?) {
 
     UIUtils.instance.showAlertwith(type: "share") { (accept) in
         if accept{
-          
-            self.instance?.delegate = self
-            self.instance?.startShareCoup()
-//            CouponInterfaceOperationHandler.sharedInstance.delegate = self
-//            CouponInterfaceOperationHandler.sharedInstance.startShareCoup(selectedCoup: selectedCoup)
+            CouponState.sharedInstance.delegate = self
+            CouponState.sharedInstance.startShareCoup(selectedCoup: selectedCoup, cont: cont)
         }
     }
     }
     
-    func updateButtonTitle(title:String){
-        self.setTitle(NSLocalizedString(title, tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
+    func updateView(coup:Offer?){
+                if coup?.purchased != nil {
+                    print("in wallet")
+                    if coup?.purchased?.post_status == "inProcess" {
+                        print("supposed")
+                        self.setTitle(NSLocalizedString("redeemButtonVerify", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
+                    }
+                    else if coup?.purchased?.post_status == "valid"{
+                        self.setTitle(NSLocalizedString("Use In Stor", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
+                    }
+                    else if coup?.purchased?.post_status == "check"{
+                          self.setTitle(NSLocalizedString("checkOrder", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
+                    }
+                }
+                else{
+                  self.setTitle(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
+        }
     }
-    
-//    func updateView(coup:Offer?){
-//                if coup?.purchased != nil {
-//                    print("in wallet")
-//                    if coup?.purchased?.post_status == "inProcess" {
-//                        print("supposed")
-//                        self.setTitle(NSLocalizedString("redeemButtonVerify", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
-//                    }
-//                    else if coup?.purchased?.post_status == "valid"{
-//                        self.setTitle(NSLocalizedString("Use In Stor", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
-//                    }
-//                    else if coup?.purchased?.post_status == "check"{
-//                          self.setTitle(NSLocalizedString("checkOrder", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
-//                    }
-//                }
-//                else{
-//                  self.setTitle(NSLocalizedString("redeemOffer", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), for: .normal)
-//        }
-//    }
 
     
      func isRegistered()->Bool{
@@ -146,19 +134,26 @@ protocol RoundedButtonDelegate {
             else if coup?.purchased?.post_status == "check"{
                 self.beginCheck(coup: coup)
             }
+            
         }
     }
    
      func beginCheck(coup:Offer?){
-          self.instance =  CouponInterfaceOperationHandler.init(coupon: coup)
-        self.instance?.delegate = self
-        self.instance?.verifyCouponForLastTime(readyforUpdate: { (ready) in
-            if ready{
-                //self.updateView(coup: coup)
-            }
-        })
+        CouponState.sharedInstance.delegate = self
+        CouponState.sharedInstance.verifyCouponForLastTime(coup: coup)
     }
     
+//    func canRecieveCode(date:Date) -> Bool {
+//        let now = Date()
+//        var components: DateComponents = Calendar.current.dateComponents([Calendar.Component.minute], from: now, to: date)
+//        let min = components.minute
+//        if min! > 5 ||  min! < 0{
+//            return true
+//        }
+//        else{
+//            return false
+//        }
+//    }
     
      func freezeView(cont:UIViewController?){
        

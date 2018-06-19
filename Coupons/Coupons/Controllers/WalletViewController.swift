@@ -122,13 +122,12 @@ class WalletViewController: UIViewController,UITableViewDelegate {
         print("image name :\(coupItem.coupon?.coup_img_name ?? "")")
         cell?.storePic.image = UIImage(named: (coupItem.coupon?.coup_brand_img)!)
         cell?.offerDescription.text = coupItem.coupon?.coup_desc
-       // cell?.getCode.updateView(coup: coupItem.coupon)
-        cell?.getCode.relatedCoupon = coupItem.coupon
+        cell?.getCode.updateView(coup: coupItem.coupon) 
         print("approve \(coupItem.post_status ?? "")")
         print("post id :\(coupItem.facebook_post ?? "")")
-//        if coupItem.coupon?.purchased != nil{
-//            print("not nil")
-//        }
+        if coupItem.coupon?.purchased != nil{
+            print("not nil")
+        }
        // print("id = \(coupItem.coupon?.coup_id ?? "")")
     }
     
@@ -136,7 +135,7 @@ class WalletViewController: UIViewController,UITableViewDelegate {
         UIUtils.instance.showAlertwith(type: "userDelete") { (accept) in
             if accept{
                 let coupItem = self.fetchedResultsController.object(at: indexPath)
-                //CouponInterfaceOperationHandler.sharedInstance.handleUserDeleteCoupon(coupItem: coupItem)
+                CouponState.sharedInstance.handleUserDeleteCoupon(coupItem: coupItem)
             }
         }
     }

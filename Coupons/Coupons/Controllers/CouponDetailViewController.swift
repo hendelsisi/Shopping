@@ -49,14 +49,13 @@ class CouponDetailViewController: UIViewController,UITableViewDataSource,UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   self.redeemButton.updateView(coup: self.selectedCoup)
-
+      
     }
     
 // MARK: - redeem Offer action
     @IBAction func redeemOffer(_ sender: Any) {
-        self.redeemButton.delegate = self   //mn l awel !!!!!!!!
-        self.redeemButton.requestOffer(cont: self, coup: self.selectedCoup)
+        self.redeemButton.delegate = self
+        self.redeemButton.requestOffer(cont: self, coup: self.selectedCoup)       
     }
  
 
@@ -66,7 +65,7 @@ class CouponDetailViewController: UIViewController,UITableViewDataSource,UITable
 
     func prepareView() {
        
-    //    self.redeemButton.updateView(coup: self.selectedCoup)
+        self.redeemButton.updateView(coup: self.selectedCoup) 
         self.sideMenuController()?.sideMenu?.allowLeftSwipe = false
         self.sideMenuController()?.sideMenu?.allowPanGesture = false
       //  APPSideMenuController.getInstance()?.shouldHandleLeftPan = false

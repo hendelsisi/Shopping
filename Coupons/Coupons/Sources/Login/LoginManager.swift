@@ -121,7 +121,7 @@ public final class LoginManager {
 
  extension LoginManager {
     
-     static let sharedLogin = LoginManager(loginBehavior: .native, defaultAudience: .friends)
+     static let shared = LoginManager(loginBehavior: .native, defaultAudience: .friends)
     
   class func sdkCompletionFor(_ completion: ((LoginResult) -> Void)?) -> FBSDKLoginManagerRequestTokenHandler? {
     guard let completion = completion else {
