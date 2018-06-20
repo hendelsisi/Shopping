@@ -11,6 +11,7 @@ import CoreData
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,10 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Utility.instance.goToInitialScreen()
         dBmanipulation()
         NotificationManager.instance.requestNotificationAuthorization()
-
+       self.handleReceiveNotificationandAppisnotActive()
         return true
     }
     
+    func handleReceiveNotificationandAppisnotActive(){
+        NotificationManager.instance.getPending()
+    }
     
     func dBmanipulation() {
         DataBaseManager.instance.retriveAndInitCoreData()
@@ -39,13 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getAppUrl() -> String {
             return "https://itunes.apple.com/app/id284882215"
     }
-
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let fbHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         return fbHandled
     }
-
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("foregrond")
+        self.handleReceiveNotificationandAppisnotActive()
+    }
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.

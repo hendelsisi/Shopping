@@ -49,7 +49,6 @@ protocol RoundedButtonDelegate {
     }
     
     func requestOffer(cont:CouponDetailViewController,coup:Offer?){
-        
         if self.isRegistered(){
             self.checkCoupAndShare(cont: cont,coup: coup)
         }else{

@@ -25,7 +25,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         center?.getNotificationSettings(completionHandler: {(_ settings: UNNotificationSettings) -> Void in
             if settings.authorizationStatus == .authorized {
                 let content: UNMutableNotificationContent? = self.getContent(title)
-               // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+              //  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
                 var request: UNNotificationRequest? = nil
                 if let aContent = content {
@@ -79,6 +79,17 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         center?.removeDeliveredNotifications(withIdentifiers: [id])
         center?.removePendingNotificationRequests(withIdentifiers: [id])
     }
+    
+    func getPending(){
+        center?.getDeliveredNotifications(completionHandler: { (notificationsArray) in
+            for notif in notificationsArray{
+                print(notif.request.identifier)
+                CartGround.instance.incrementDigit()
+                CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: notif.request.identifier)
+                self.removeLocalNotification(id: notif.request.identifier)
+            }
+        })
+    }
 
 // MARK: - userNotification Center Delegate
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -94,6 +105,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // increment badge icon
+        print("received ...")
         if !self.receicedForground{
             CartGround.instance.incrementDigit()
              CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: response.notification.request.identifier)
