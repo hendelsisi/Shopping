@@ -128,6 +128,7 @@
 		B39F090D20877DE1006ACD94 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F090C20877DE1006ACD94 /* ContainerViewController.swift */; };
 		B39F090F20877F1D006ACD94 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F090E20877F1D006ACD94 /* PageViewController.swift */; };
 		B3A0FE5F209F82E000AEC9F6 /* FBRequstHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A0FE5E209F82E000AEC9F6 /* FBRequstHandler.swift */; };
+		B3D2002C20DA9D7600781A6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D2002E20DA9D7600781A6D /* InfoPlist.strings */; };
 		B3D7244520B22325002CD837 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D7244220B22325002CD837 /* MyNavigationController.swift */; };
 		B3E5FD65209F1A2F001DB384 /* LoginButton.Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FD5D209F1A2F001DB384 /* LoginButton.Tooltip.swift */; };
 		B3E5FD66209F1A2F001DB384 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FD5E209F1A2F001DB384 /* LoginResult.swift */; };
@@ -271,6 +272,9 @@
 		B39F090E20877F1D006ACD94 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B39F091020878CD5006ACD94 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		B3A0FE5E209F82E000AEC9F6 /* FBRequstHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRequstHandler.swift; sourceTree = "<group>"; };
+		B3D2002D20DA9D7600781A6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3D2002F20DA9D7F00781A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3D2003020DA9D8200781A6D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3D7244220B22325002CD837 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		B3E5FD5D209F1A2F001DB384 /* LoginButton.Tooltip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.Tooltip.swift; sourceTree = "<group>"; };
 		B3E5FD5E209F1A2F001DB384 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -727,6 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				B3EBD29F208A37710099A42D /* LocalizeFile.strings */,
+				B3D2002E20DA9D7600781A6D /* InfoPlist.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = B31F32CA208603680040B2B1;
 			productRefGroup = B31F32D4208603680040B2B1 /* Products */;
@@ -819,6 +825,7 @@
 				B31F32E1208603690040B2B1 /* Assets.xcassets in Resources */,
 				B31F32DC208603680040B2B1 /* Main.storyboard in Resources */,
 				B3EBD29D208A37710099A42D /* LocalizeFile.strings in Resources */,
+				B3D2002C20DA9D7600781A6D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1041,16 @@
 				B31F32E3208603690040B2B1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3D2002E20DA9D7600781A6D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D2002D20DA9D7600781A6D /* en */,
+				B3D2002F20DA9D7F00781A6D /* Base */,
+				B3D2003020DA9D8200781A6D /* ar */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B3EBD29F208A37710099A42D /* LocalizeFile.strings */ = {
