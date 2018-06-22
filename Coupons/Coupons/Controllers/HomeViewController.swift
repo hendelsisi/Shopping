@@ -6,7 +6,7 @@
 import UIKit
 import CoreData
 import Foundation
-import M13BadgeView
+
 import MaryPopin
 import ENSwiftSideMenu
 
@@ -18,38 +18,12 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
         cart.reset()
     }
     
-  func refreshView() {
-        print("refresh")
-    if Utility.instance.isEnglishSystem(){
-                    self.navigationItem.rightBarButtonItem?.customView = cart
-                }
-                else{
-                    self.navigationItem.rightBarButtonItem?.customView = cart
-        }
-    }
-    
     var cart:CartGround = CartGround.instance
     var menuItem:CustomBarItem = CustomBarItem.init(frame: CGRect.init(x: 0, y: 0, width: 24, height: 24))
     
     func menuButtonDidClicked() {
         toggleSideMenuView()
     }
-    
-//    func cartButtonDidClicked() {
-//        CartGround.instance.incrementDigit()
-////        CartGround.instance.reset()
-////        self.performSegue(withIdentifier: "WalletScreen", sender: nil)
-//    }
-//
-//    func refreshView() {
-//        print("refresh ing...")
-//        if Utility.instance.isEnglishSystem(){
-//            self.navigationItem.rightBarButtonItem?.customView = cart
-//        }
-//        else{
-//            self.navigationItem.rightBarButtonItem?.customView = cart
-//        }
-//    }
     
     var open:Bool = true
     func sideMenuWillOpen() {
@@ -78,7 +52,7 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
     @IBOutlet weak var couponsTable: UITableView!
     var cartButton: UIButton?
     var coloredArray = [String]()
-    var lib = M13BadgeView()
+   // var lib = M13BadgeView()
     @IBOutlet weak var darkenView: UIView!
 
 
@@ -88,19 +62,15 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
         // Do any additional setup after loading the view.
       //  Utility.getInstance()?.delegate = self
        prepareView()
+         dbFetch()
 //        addObserverNot()
         getColorCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        dbFetch()
          self.open = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+        // cart.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -152,18 +122,18 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
     func viewGiftPopUp() {
         print("viewGiftPopUp")
         if Utility.instance.isFirstshowGiftPopUp() {
-            UserDefaultsManager.instance.saveObject("true" as AnyObject, key: "viewGifts")
-
-            let control: UIViewController? = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetGifts")
-            control?.setPopinTransitionStyle(BKTPopinTransitionStyle(rawValue: 5)!)
-         
-            control?.setPopinAlignment(BKTPopinAlignementOption(rawValue: 0)!)
-            control?.setPopinTransitionDirection(.top)
-            control?.view.bounds = CGRect(x: 0, y: 0, width: 300, height: 450)
-            presentPopinController(control, animated: true, completion: {() -> Void in
-               
-            })
-        }
+            print("first time app")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let control: UIViewController? = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetGifts")
+                control?.setPopinTransitionStyle(BKTPopinTransitionStyle(rawValue: 5)!)
+                control?.setPopinAlignment(BKTPopinAlignementOption(rawValue: 0)!)
+                control?.setPopinTransitionDirection(.top)
+                control?.view.bounds = CGRect(x: 0, y: 0, width: 300, height: 450)
+                self.presentPopinController(control, animated: true, completion: {() -> Void in
+                      UserDefaultsManager.instance.saveObject("true" as AnyObject, key: "viewGifts")
+                })
+            }
+       }
     }
     
 

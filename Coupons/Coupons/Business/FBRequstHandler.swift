@@ -305,7 +305,6 @@ public final class FBRequstHandler: NSObject {
     }
     
     func startLoginAndShare(ref:CouponDetailViewController?,sale:Offer?)  {
-  
         loginManager = LoginManager.shared
         loginManager.logIn(readPermissions: [.publicProfile,.userFriends,.email,.userPosts], viewController: ref) { result in
             self.loginManagerDidComplete(result:result,view: ref,sale:sale)
@@ -321,6 +320,10 @@ public final class FBRequstHandler: NSObject {
             print("\(error)")
         case .success(let grantedPermissions, _ , _):
             print( "Login succeeded with granted permissions: \(grantedPermissions)")
+            let dateFormat2 = DateFormatter()
+            dateFormat2.dateFormat = "d LLL yyyy HH:mm:ss"
+            print("will expire at:")
+            print(dateFormat2.string(from: (AccessToken.current?.expirationDate)!))
        self.beginToShare(view: view, sale: sale)
         }
     }

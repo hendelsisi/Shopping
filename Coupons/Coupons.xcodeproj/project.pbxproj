@@ -87,6 +87,7 @@
 		B310AB22209DC99D008541B0 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310AAD1209DC99D008541B0 /* ShareButton.swift */; };
 		B310AB23209DC99D008541B0 /* LikeControl.AuxilaryStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310AAD2209DC99D008541B0 /* LikeControl.AuxilaryStyle.swift */; };
 		B313B7F920AA5714004608C2 /* CartGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313B7F820AA5714004608C2 /* CartGround.swift */; };
+		B317A43820DC6F2300892228 /* SSBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317A43720DC6F2300892228 /* SSBadgeButton.swift */; };
 		B31F32D7208603680040B2B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F32D6208603680040B2B1 /* AppDelegate.swift */; };
 		B31F32D9208603680040B2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F32D8208603680040B2B1 /* ViewController.swift */; };
 		B31F32DC208603680040B2B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31F32DA208603680040B2B1 /* Main.storyboard */; };
@@ -228,6 +229,7 @@
 		B310AAD1209DC99D008541B0 /* ShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		B310AAD2209DC99D008541B0 /* LikeControl.AuxilaryStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeControl.AuxilaryStyle.swift; sourceTree = "<group>"; };
 		B313B7F820AA5714004608C2 /* CartGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartGround.swift; sourceTree = "<group>"; };
+		B317A43720DC6F2300892228 /* SSBadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSBadgeButton.swift; sourceTree = "<group>"; };
 		B31F32D3208603680040B2B1 /* Coupons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31F32D6208603680040B2B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B31F32D8208603680040B2B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -653,12 +655,12 @@
 		B31F3317208604D40040B2B1 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B317A43720DC6F2300892228 /* SSBadgeButton.swift */,
 				B3572BBE20B6145300BC7822 /* CustomBarItem.swift */,
 				B38A244A20A4A3DE00A87313 /* RoundedButton.swift */,
 				B3572BBC20B60B2800BC7822 /* ItemAnimation.swift */,
 				B313B7F820AA5714004608C2 /* CartGround.swift */,
 				B31F32EF208603E10040B2B1 /* RoundedImage.swift */,
-				B31F32F2208603E10040B2B1 /* CALayer+ButtonColor.swift */,
 				B39F090A20877D4F006ACD94 /* HeaderView.swift */,
 				B31F3318208604D40040B2B1 /* CouponTableViewCell.swift */,
 				B31F3319208604D40040B2B1 /* IconCollectionViewCell.swift */,
@@ -739,6 +741,7 @@
 		B3FC1BE320A9E77E00D94E14 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B31F32F2208603E10040B2B1 /* CALayer+ButtonColor.swift */,
 				B3FC1BE420A9E77E00D94E14 /* ColorExtension.swift */,
 				B39618E520AB014500D11217 /* StringExtension.swift */,
 				B310845420BBB51600830427 /* topMostViewController.swift */,
@@ -862,7 +865,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-				"${BUILT_PRODUCTS_DIR}/M13BadgeView/M13BadgeView.framework",
 				"${BUILT_PRODUCTS_DIR}/MaryPopin/MaryPopin.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -874,7 +876,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13BadgeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaryPopin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -898,6 +899,7 @@
 				B310AAFF209DC99D008541B0 /* ContentProtocol.swift in Sources */,
 				B3A0FE5F209F82E000AEC9F6 /* FBRequstHandler.swift in Sources */,
 				B310AB1D209DC99D008541B0 /* ShareError.swift in Sources */,
+				B317A43820DC6F2300892228 /* SSBadgeButton.swift in Sources */,
 				B3E5FD68209F1A2F001DB384 /* LoginDefaultAudience.swift in Sources */,
 				B310AB17209DC99D008541B0 /* GameRequest.RecipientsFilter.swift in Sources */,
 				B310AB19209DC99D008541B0 /* ShareDialog.swift in Sources */,

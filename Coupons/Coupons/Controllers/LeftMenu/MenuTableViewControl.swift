@@ -63,7 +63,7 @@ static let instance = MenuTableViewControl()
     func prepareView(){
         self.tableView?.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0)
         self.tableView?.separatorStyle = .none
-        self.tableView?.backgroundColor = UIColor.clear
+        self.tableView?.backgroundColor = UIColor.white
         self.tableView?.scrollsToTop = false
         
         // Preserve selection between presentations

@@ -25,7 +25,8 @@ class CouponDetailViewController: UIViewController,UITableViewDataSource,UITable
     
     func updateToViewFrozen() {
          self.view.isUserInteractionEnabled = false
-         SVProgressHUD.show()
+    SVProgressHUD.setContainerView(UIApplication.shared.delegate?.window??.rootViewController?.view)
+        SVProgressHUD.show()
     }
     
     func updateToInteractiveView() {

@@ -7,61 +7,60 @@
 //
 
 import UIKit
-import M13BadgeView
+//import M13BadgeView
 
 protocol CartGroundDelegate:NSObjectProtocol {
     func cartButtonDidClicked()
-    func refreshView()
+  //  func refreshView()
 }
 
 class CartGround: UIView {
+    
+    let notificationButton = SSBadgeButton()
+    
     static let instance = CartGround.init(frame: CGRect.init(x: 0, y: 0, width: 24, height: 24))
    
-    var notificationDigit:Int8 {
-        get{
-            return self.getNotifNumber()
-        }
-        set{
-          UserDefaultsManager.instance.saveObject(newValue as AnyObject, key: "notifNumber")
+    var notificationDigit:Int = 0 {
+        didSet{
+          UserDefaultsManager.instance.saveObject(notificationDigit as AnyObject, key: "notifNumber")
+            if notificationDigit == 0{
+                notificationButton.badgeLabel.isHidden = true
+            }
         }
     }
     
-    var lib : M13BadgeView?
+   // var lib : M13BadgeView?
     weak var delegate:CartGroundDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let button:UIButton = UIButton.init(type: .custom)
-        button.frame = frame
-        button.setImage(UIImage(named: "Coupons_screen_wallet_icon"), for: .normal)
-        button.addTarget(self, action: Selector("ViewCart:"), for: .touchUpInside)
+        self.notificationDigit = self.getNotifNumber()
+        notificationButton.frame = frame
+        notificationButton.setImage(UIImage(named: "Coupons_screen_wallet_icon"), for: .normal)
+        notificationButton.addTarget(self, action: Selector("ViewCart:"), for: .touchUpInside)
 
-       addSubview(button)
-         lib = M13BadgeView.init(frame: CGRect.init(x: -15, y: -15, width: 20, height: 20))
+       addSubview(notificationButton)
         
-        addSubview(lib!)
-        lib?.text = String(notificationDigit)
-        if Utility.instance.isEnglishSystem(){
-        lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight
+        if  notificationDigit != 0 {
+            if Utility.instance.isEnglishSystem(){
+                notificationButton.badge = String(notificationDigit)
+            }
+            else{
+                notificationButton.badge = String(notificationDigit).replacedEnglishDigitsWithArabic
+            }
         }
-        else if(notificationDigit != 0){
-            lib?.text = String(notificationDigit).replacedEnglishDigitsWithArabic
-            lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft
-        }
-        lib?.hidesWhenZero = true
     }
     
     @objc func ViewCart(_ sender: Any?){
        self.delegate?.cartButtonDidClicked()
     }
     
-    func getNotifNumber()->Int8{
+   public func getNotifNumber()->Int{
         if UserDefaultsManager.instance.getObjectForKey("notifNumber") == nil {
              return 0
         }
         else{
-            return UserDefaultsManager.instance.getObjectForKey("notifNumber") as! Int8
+            return UserDefaultsManager.instance.getObjectForKey("notifNumber") as! Int
         }
     }
     
@@ -70,41 +69,43 @@ class CartGround: UIView {
         notificationDigit = notificationDigit + 1
         
         if Utility.instance.isEnglishSystem(){
-            lib?.text = String(notificationDigit)
-             lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight
+             notificationButton.badge = String(notificationDigit)
+//             lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight
         }
         else{
-            lib?.text = String(notificationDigit).replacedEnglishDigitsWithArabic
-            lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft
+            notificationButton.badge = String(notificationDigit).replacedEnglishDigitsWithArabic
+//            lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft
         }
-         lib?.hidesWhenZero = true
-        self.delegate?.refreshView()
+        
+    //   self.delegate?.refreshView()
     }
     
-    func decrementDigit(){
-        print("decrementDigit")
-        if notificationDigit != 0{
-            notificationDigit = notificationDigit - 1
-            
-            if Utility.instance.isEnglishSystem(){
-                lib?.text = String(notificationDigit)
-                lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight
-            }
-            else if (notificationDigit != 0){
-                lib?.text = String(notificationDigit).replacedEnglishDigitsWithArabic
-                lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft
-            }
-            lib?.hidesWhenZero = true
-            self.delegate?.refreshView()
-        }
-    }
+//    func decrementDigit(){
+//        print("decrementDigit")
+//        if notificationDigit != 0{
+//            notificationDigit = notificationDigit - 1
+//
+//            if Utility.instance.isEnglishSystem(){
+//                notificationButton.badge = String(notificationDigit)
+////                lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentRight
+//            }
+//            else if (notificationDigit != 0){
+//                notificationButton.badge = String(notificationDigit).replacedEnglishDigitsWithArabic
+////                lib?.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft
+//            }
+//
+////            lib?.hidesWhenZero = true
+//
+//           // self.delegate?.refreshView()
+//        }
+//    }
     
     
     func reset(){
         notificationDigit = 0
-        lib?.text = String(notificationDigit)
-        lib?.hidesWhenZero = true
-         self.delegate?.refreshView()
+       // notificationButton.badge = String(notificationDigit)
+//        lib?.hidesWhenZero = true
+        // self.delegate?.refreshView()
     }
     
     required public init?(coder aDecoder: NSCoder) {

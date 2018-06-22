@@ -1253,8 +1253,10 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     if(!_hudView) {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
         _hudView = [UIVisualEffectView new];
+        NSLog(@"this case");
 #else
         _hudView = [UIView new];
+         NSLog(@"another case");
 #endif
         _hudView.layer.masksToBounds = YES;
         _hudView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;

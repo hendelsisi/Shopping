@@ -73,7 +73,7 @@ protocol CouponStateDelegate {
     func removeCouponAndUpdateView(coup:Offer?,delete:(Bool)->Void){
         DataBaseManager.instance.deleteCouponfromCart(id: (coup?.purchased?.facebook_post)!, dbDelete: { (success) in
             if success{
-                CartGround.instance.decrementDigit()
+              //  CartGround.instance.decrementDigit()
                 self.delegate?.needUpdateView(coup: coup)
                delete(true)
             }

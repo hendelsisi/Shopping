@@ -155,12 +155,11 @@ protocol RoundedButtonDelegate {
 //    }
     
      func freezeView(cont:UIViewController?){
-       
         cont?.view.isUserInteractionEnabled = false
+        SVProgressHUD.setContainerView(cont?.view)
         SVProgressHUD.show()
     }
      func freeView(cont:UIViewController?){
-      
         cont?.view.isUserInteractionEnabled = true
         SVProgressHUD.dismiss()
     }

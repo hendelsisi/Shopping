@@ -61,7 +61,6 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         let content = UNMutableNotificationContent()
        content.title = NSLocalizedString("notif title", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: "")
         content.body = title! + (NSLocalizedString("notif msg", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""))
-       
         return content
     }
 
@@ -84,7 +83,10 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         center?.getDeliveredNotifications(completionHandler: { (notificationsArray) in
             for notif in notificationsArray{
                 print(notif.request.identifier)
-                CartGround.instance.incrementDigit()
+                DispatchQueue.main.async {
+                    CartGround.instance.incrementDigit()
+
+                }
                 CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: notif.request.identifier)
                 self.removeLocalNotification(id: notif.request.identifier)
             }
@@ -96,7 +98,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         let presentationOptions: UNNotificationPresentationOptions = [.alert]
         
         self.receicedForground = true
-        CartGround.instance.incrementDigit()
+       // CartGround.instance.incrementDigit()
        CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: notification.request.identifier)
         
         completionHandler(presentationOptions)
@@ -107,7 +109,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         // increment badge icon
         print("received ...")
         if !self.receicedForground{
-            CartGround.instance.incrementDigit()
+          //  CartGround.instance.incrementDigit()
              CouponState.sharedInstance.handleCoupStateAfterNotification(coupShereId: response.notification.request.identifier)
         }
         let userOpenRecivedNot: Bool = userTap(toViewNotification: response)
