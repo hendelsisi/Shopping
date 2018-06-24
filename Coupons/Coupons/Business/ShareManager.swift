@@ -53,13 +53,11 @@ protocol ShareManagerDelegate: NSObjectProtocol {
                     // add to cart and change the button title
                     print(privacy)
                     if privacy == "private" || privacy == "deleted"{
-                       
                           UIUtils.instance.showAlertWithMsg( NSLocalizedString("privatePostMsg", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""), title:NSLocalizedString("privatePostTitle", tableName: "LocalizeFile", bundle: Bundle.main, value: "", comment: ""))
                         
                     }else{
                         //add local notification
-                          NotificationManager.instance.addNotif( withTitle: sale?.coup_store, checkId: pid)
-                    self.addCoupAndAlert(coup: sale, pid: pid)
+                    self.addCoupAndAlertAndNotification(coup: sale, pid: pid)
                     }
                 }
                 else{
@@ -71,9 +69,10 @@ protocol ShareManagerDelegate: NSObjectProtocol {
     
         func addLocalNotification(_ sharedCoupon: Offer?,postId:String) {
             NotificationManager.instance.addNotif(withTitle: sharedCoupon?.coup_store, checkId: postId)
+            CartGround.instance.incrementDigit()
         }
     
-    func addCoupAndAlert(coup:Offer?,pid:String )  {
+    func addCoupAndAlertAndNotification(coup:Offer?,pid:String )  {
         DataBaseManager.instance.addValidShareState(coup: coup,postId:pid ) { (finish) in
             if finish{
                self.delegate?.fbShareDidSucceed(sale: coup)

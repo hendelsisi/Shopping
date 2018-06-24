@@ -118,6 +118,7 @@ protocol RoundedButtonDelegate {
         
         if UserDefaultsManager.instance.getObjectForKey("CoupState") != nil{
             UserDefaultsManager.instance.removeObject("CoupState")
+            NotificationManager.instance.decrementBadge()
              self.beginCheck(coup: coup)
         }
         else{
@@ -131,6 +132,7 @@ protocol RoundedButtonDelegate {
             }
                 
             else if coup?.purchased?.post_status == "check"{
+                 NotificationManager.instance.decrementBadge()
                 self.beginCheck(coup: coup)
             }
             

@@ -15,7 +15,7 @@ import SVProgressHUD
 
 protocol FBRequstHandlerDelegate {
     func sharingFacebookdidSucceeded(pid:String,offer:Offer?)
-      func sharingFacebookdidFailed()
+    func sharingFacebookdidFailed()
     func prepareUIforFBRequest()
     func updateViewAfterFBRequest()
 }
