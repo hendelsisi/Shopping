@@ -14,8 +14,13 @@ class HomeViewController: UIViewController,ENSideMenuDelegate,CartGroundDelegate
    
     func cartButtonDidClicked() {
         print("clicked")
-       self.performSegue(withIdentifier: "WalletScreen", sender: nil)
-        cart.reset()
+        if  Utility.instance.isFirstTimeSignUp() {
+            self.performSegue(withIdentifier: "register", sender: nil)
+        }
+        else{
+            self.performSegue(withIdentifier: "WalletScreen", sender: nil)
+            cart.reset()
+        }
     }
     
     var cart:CartGround = CartGround.instance

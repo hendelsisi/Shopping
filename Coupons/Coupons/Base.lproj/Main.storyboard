@@ -309,7 +309,7 @@
                                     <constraint firstAttribute="width" constant="250" id="j5E-uY-GRF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Create">
+                                <state key="normal" title="Create \ Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -805,6 +805,7 @@
                         <outlet property="couponsTable" destination="NR2-uE-nmp" id="Hkj-ef-K83"/>
                         <outlet property="darkenView" destination="0gO-j1-2n7" id="igU-hs-cvi"/>
                         <segue destination="xor-Vc-sKa" kind="show" identifier="WalletScreen" id="XBZ-OE-vOW"/>
+                        <segue destination="Sfl-Kn-yS8" kind="show" identifier="register" id="AvA-AW-mlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO9-rf-R31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1436,8 +1437,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="VMj-SC-fNr"/>
         <segue reference="EjS-yc-UkR"/>
-        <segue reference="knw-5C-rz7"/>
-        <segue reference="Lp0-7a-1zC"/>
-        <segue reference="EVp-9Q-c8s"/>
+        <segue reference="XBZ-OE-vOW"/>
+        <segue reference="AvA-AW-mlZ"/>
+        <segue reference="9We-E5-dCZ"/>
     </inferredMetricsTieBreakers>
 </document>

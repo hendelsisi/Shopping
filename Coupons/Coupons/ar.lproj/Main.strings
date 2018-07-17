@@ -128,7 +128,7 @@
 "y99-vY-C85.normalTitle" = "رجوع";
 
 /* Class = "UIButton"; normalTitle = "Create"; ObjectID = "z2R-gt-FiH"; */
-"z2R-gt-FiH.normalTitle" = "تسجيل";
+"z2R-gt-FiH.normalTitle" = "تسجيل دخول";
 
 /* Class = "UILabel"; text = "Let your friends know about the promotion"; ObjectID = "zcS-xJ-kkg"; */
 "zcS-xJ-kkg.text" = "Let your friends know about the promotion";
